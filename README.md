@@ -10,11 +10,12 @@ The library uses [the code from the Android frameworks](https://android.googleso
 
 Support for Android 4.0 and up.
 
+
 Feel free to fork or issue pull requests on github. Issues can be reported on the github issue tracker.
 
 Date Picker | Time Picker
 ---- | ----
-![Date Picker](https://raw.github.com/wdullaer/MaterialDateTimePicker/gh-pages/images/date_picker.png) | ![Time Picker](https://raw.github.com/wdullaer/MaterialDateTimePicker/gh-pages/images/time_picker.png)
+![Date Picker](https://github.com/kenmeidearu/MaterialDateTimePicker-master/blob/master/DateTimePicker.png) | ![Time Picker](https://raw.github.com/wdullaer/MaterialDateTimePicker/gh-pages/images/time_picker.png)
 
 
 ## Table of Contents
@@ -212,7 +213,9 @@ public void onResume() {
   if(dpd != null) dpd.setOnDateSetListener(this);
 }
 ```
-
+This Project is Clone from
+https://github.com/wdullaer/MaterialDateTimePicker
+and litle modified in DatePicker to add Time in Date picker
 
 ## Potential Improvements
 * Landscape timepicker can use some improvement
