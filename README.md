@@ -15,7 +15,7 @@ Feel free to fork or issue pull requests on github. Issues can be reported on th
 
 Date Picker | Time Picker
 ---- | ----
-![Date Picker](https://github.com/kenmeidearu/MaterialDateTimePicker-master/blob/master/DateTimePicker.png) | ![Time Picker](https://raw.github.com/wdullaer/MaterialDateTimePicker/gh-pages/images/time_picker.png)
+![Date Picker](https://github.com/kenmeidearu/MaterialDateTimePicker-master/blob/master/DateTimePicker.png) | ![MonthView](https://github.com/kenmeidearu/MaterialDateTimePicker-master/blob/master/DateTimeMonth.png)
 
 
 ## Table of Contents
@@ -34,7 +34,7 @@ Date Picker | Time Picker
 The easiest way to add the Material DateTime Picker library to your project is by adding it as a dependency to your `build.gradle`
 ```java
 dependencies {
-  compile 'com.wdullaer:materialdatetimepicker:2.5.0'
+  compile 'com.kenmeidearu:materialdatetimepicker:2.5.0'
 }
 ```
 
@@ -74,7 +74,10 @@ DatePickerDialog dpd = DatePickerDialog.newInstance(
   MainActivity.this,
   now.get(Calendar.YEAR),
   now.get(Calendar.MONTH),
-  now.get(Calendar.DAY_OF_MONTH)
+  now.get(Calendar.DAY_OF_MONTH),
+  now.get(Calendar.HOUR_OF_DAY),
+  now.get(Calendar.MINUTE),
+  true
 );
 dpd.show(getFragmentManager(), "Datepickerdialog");
 ```
