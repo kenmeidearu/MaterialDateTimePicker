@@ -80,7 +80,7 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
             switch (typeControl.toUpperCase()){
                 case "HOUR":
                     for (int a = 1; a <= 12; a++) {
-                        datatime.add(String.format(Locale.getDefault(),"%d", a));
+                        datatime.add(String.format("%d", a));
                     }
                     break;
                 case "MINUTE":
