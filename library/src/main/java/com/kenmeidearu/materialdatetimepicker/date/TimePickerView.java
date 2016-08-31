@@ -86,18 +86,18 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
                 case "MINUTE":
                     for (int a = 0; a <= 59; a++) {
                         if(a<10){
-                            datatime.add("0"+String.format(Locale.getDefault(),"%d", a));
+                            datatime.add("0"+String.format("%d", a));
                         }else{
-                            datatime.add(String.format(Locale.getDefault(),"%d", a));
+                            datatime.add(String.format("%d", a));
                         }
                     }
                     break;
                 case "SECOND":
                     for (int a = 0; a <= 59; a++) {
                         if(a<10){
-                            datatime.add("0"+String.format(Locale.getDefault(),"%d", a));
+                            datatime.add("0"+String.format("%d", a));
                         }else{
-                            datatime.add(String.format(Locale.getDefault(),"%d", a));
+                            datatime.add(String.format("%d", a));
                         }
                     }
                     break;
@@ -107,9 +107,9 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
                 case "HOUR":
                     for (int a = 0; a <= 23; a++) {
                         if(a<10){
-                            datatime.add("0"+String.format(Locale.getDefault(),"%d", a));
+                            datatime.add("0"+String.format("%d", a));
                         }else{
-                            datatime.add(String.format(Locale.getDefault(),"%d", a));
+                            datatime.add(String.format("%d", a));
                         }
 
                     }
@@ -117,18 +117,18 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
                 case "MINUTE":
                     for (int a = 0; a <= 59; a++) {
                         if(a<10){
-                            datatime.add("0"+String.format(Locale.getDefault(),"%d", a));
+                            datatime.add("0"+String.format("%d", a));
                         }else{
-                            datatime.add(String.format(Locale.getDefault(),"%d", a));
+                            datatime.add(String.format("%d", a));
                         }
                     }
                     break;
                 case "SECOND":
                     for (int a = 0; a <= 59; a++) {
                         if(a<10){
-                            datatime.add("0"+String.format(Locale.getDefault(),"%d", a));
+                            datatime.add("0"+String.format("%d", a));
                         }else{
-                            datatime.add(String.format(Locale.getDefault(),"%d", a));
+                            datatime.add(String.format("%d", a));
                         }
                     }
                     break;
