@@ -176,7 +176,6 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
             v.setAccentColor(mController.getAccentColor(), mController.isThemeDark());
             v.requestLayout();
             int time = getTimeFromTextView(v);
-            //Log.e("isi time","isi"+time);
             boolean selected=false;
             switch (typeControl.toUpperCase()){
                 case "HOUR":
@@ -246,7 +245,6 @@ public class TimePickerView extends ListView implements OnItemClickListener, OnD
                     break;
             }
 
-        Log.e("isi dari atas"," sisinya: "+rubah);
         postSetSelectionCentered(rubah);
     }
 
