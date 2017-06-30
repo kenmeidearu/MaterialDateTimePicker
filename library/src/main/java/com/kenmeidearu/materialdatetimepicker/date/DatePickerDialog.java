@@ -200,6 +200,7 @@ public class DatePickerDialog extends DialogFragment implements
     private boolean mEnableSeconds;
     private boolean mEnableMinutes;
     private boolean mOnlyDate;
+    private boolean mOnlyMonthYear;
 
     // Accessibility strings.
     private String mHourPickerDescription;
@@ -951,6 +952,11 @@ public class DatePickerDialog extends DialogFragment implements
     public void showMonthPickerFirst(boolean monthPicker) {
         mDefaultView = monthPicker ? MONTH_VIEW : MONTH_AND_DAY_VIEW;
     }
+         
+    public void monthYearOnly(boolean monthOnly){
+        mOnlyMonthYear=monthOnly;
+    }
+         
     public  void dateOnly(boolean dateonly){
         mOnlyDate = dateonly;
     }
@@ -1175,7 +1181,9 @@ public class DatePickerDialog extends DialogFragment implements
         if (v.getId() == R.id.date_picker_year) {
             setCurrentView(YEAR_VIEW);
         } else if (v.getId() == R.id.date_picker_day) {
-            setCurrentView(MONTH_AND_DAY_VIEW);
+            if(!mOnlyMonthYear) {
+                setCurrentView(MONTH_AND_DAY_VIEW);
+            }
         } else if (v.getId() == R.id.date_picker_month) {
             setCurrentView(MONTH_VIEW);
         }else if(v.getId()==R.id.hours){
@@ -1232,7 +1240,9 @@ public class DatePickerDialog extends DialogFragment implements
         mCalendar.set(Calendar.MONTH, month);
         adjustDayInMonthIfNeeded(mCalendar);
         updatePickers();
-        setCurrentView(MONTH_AND_DAY_VIEW);
+        if(!mOnlyMonthYear) {
+            setCurrentView(MONTH_AND_DAY_VIEW);
+        }
         updateDisplay(true);
     }
 
