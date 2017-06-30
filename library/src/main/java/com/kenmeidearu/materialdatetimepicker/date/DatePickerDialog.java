@@ -1211,7 +1211,12 @@ public class DatePickerDialog extends DialogFragment implements
         mCalendar.set(Calendar.YEAR, year);
         adjustDayInMonthIfNeeded(mCalendar);
         updatePickers();
-        setCurrentView(MONTH_AND_DAY_VIEW);
+        mMonthPickerView.init();
+        if(!mOnlyMonthYear) {
+            setCurrentView(MONTH_AND_DAY_VIEW);
+        }else {
+            setCurrentView(MONTH_VIEW);
+        }
         updateDisplay(true);
     }
 
@@ -1293,6 +1298,12 @@ public class DatePickerDialog extends DialogFragment implements
         return output;
     }
 
+    @Override
+    public int getCurrentYear(){
+        if (selectableDays != null) return selectableDays[0].get(Calendar.YEAR);
+        return  mCalendar.get(mCalendar.YEAR);
+    }
+         
     @Override
     public int getMinYear() {
         if (selectableDays != null) return selectableDays[0].get(Calendar.YEAR);
