@@ -49,6 +49,7 @@ public class MonthPickerView extends ListView implements OnItemClickListener, On
     private Calendar minDate;
     private Calendar maxDate;
     private  TextView mSelectedViewT;
+    private Context ctx;
     //private TextViewWithCircularIndicator mSelectedView;
 
 
@@ -67,20 +68,33 @@ public class MonthPickerView extends ListView implements OnItemClickListener, On
         mChildSize = res.getDimensionPixelOffset(R.dimen.mdtp_year_label_height);
         setVerticalFadingEdgeEnabled(true);
         setFadingEdgeLength(mChildSize / 3);
-        init(context);
+        this.ctx=context;
+        init();
         setOnItemClickListener(this);
         setSelector(new StateListDrawable());
         setDividerHeight(0);
         onDateChanged();
     }
 
-    private void init(Context context) {
+    public void init() {
         String[] months = new DateFormatSymbols().getMonths();
         ArrayList<String> monthsList = new ArrayList<>();
-        for (int month = mController.getMinMonth(); month <= mController.getMaxMonth(); month++) {
+        int awalBulan,akhirBulan;
+        if(mController.getMinYear()>=mController.getCurrentYear()){
+            awalBulan=mController.getMinMonth();
+        }else{
+            awalBulan=0;
+        }
+        if(mController.getMaxYear()<=mController.getCurrentYear()){
+            akhirBulan=mController.getMaxMonth();
+        }else{
+            akhirBulan=11;
+        }
+        
+        for (int month = awalBulan; month <= akhirBulan; month++) {
             monthsList .add(months[month]);
         }
-        mAdapter = new MonthAdapter(context, R.layout.mdtp_year_label_text_view, monthsList);
+        mAdapter = new MonthAdapter(ctx, R.layout.mdtp_year_label_text_view, monthsList);
         setAdapter(mAdapter);
     }
 
