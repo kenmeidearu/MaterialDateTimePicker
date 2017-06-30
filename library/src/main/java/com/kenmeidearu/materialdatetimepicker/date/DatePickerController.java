@@ -49,6 +49,8 @@ public interface DatePickerController {
     int getMinYear();
 
     int getMaxYear();
+    
+    int getCurrentYear();
 
     int getMinMonth();
 
