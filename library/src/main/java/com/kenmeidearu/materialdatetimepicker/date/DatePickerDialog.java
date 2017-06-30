@@ -834,15 +834,17 @@ public class DatePickerDialog extends DialogFragment implements
         if (mDayOfWeekView != null) {
             if (mTitle != null) mDayOfWeekView.setText(mTitle.toUpperCase(Locale.getDefault()));
             else {
-                mDayOfWeekView.setText(mCalendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG,
+                if(mCalendar!=null){
+                  mDayOfWeekView.setText(mCalendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG,
                         Locale.getDefault()).toUpperCase(Locale.getDefault()));
+                }
             }
         }
 
-        mSelectedMonthTextView.setText(mCalendar.getDisplayName(Calendar.MONTH, Calendar.SHORT,
+       if (mSelectedMonthTextView != null)  mSelectedMonthTextView.setText(mCalendar.getDisplayName(Calendar.MONTH, Calendar.SHORT,
                 Locale.getDefault()).toUpperCase(Locale.getDefault()));
-        mSelectedDayTextView.setText(DAY_FORMAT.format(mCalendar.getTime()));
-        mYearView.setText(YEAR_FORMAT.format(mCalendar.getTime()));
+       if (mSelectedDayTextView != null)  mSelectedDayTextView.setText(DAY_FORMAT.format(mCalendar.getTime()));
+       if (mYearView != null) mYearView.setText(YEAR_FORMAT.format(mCalendar.getTime()));
         setHour(mInitialTime.getHour());
         setMinute(mInitialTime.getMinute());
         setSecond(mInitialTime.getSecond());
